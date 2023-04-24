@@ -27,3 +27,8 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### Bootstrap notation
+```sh
+https://getbootstrap.com/docs/4.0/utilities/spacing/
+```

@@ -1,7 +1,7 @@
 <template>
   <div class="py-4 container-fluid">
     <div class="row">
-      <div class="col-lg-7 position-relative z-index-2">
+      <div class="col-lg-12 position-relative z-index-2">
         <div class="mb-4 card card-plain">
           <div class="p-3 card-body">
             <div class="row">
@@ -14,26 +14,30 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-5 col-sm-5">
+          <div class="col-lg-3 col-sm-3">
             <card :title="stats.money.title" :value="stats.money.value" :percentage="stats.money.percentage"
               :icon-class="stats.money.iconClass" :icon-background="stats.iconBackground" direction-reverse></card>
+          </div>
+          <div class="col-lg-3 col-sm-3">
             <card :title="stats.users.title" :value="stats.users.value" :percentage="stats.users.percentage"
               :icon-class="stats.users.iconClass" :icon-background="stats.iconBackground" direction-reverse></card>
           </div>
-          <div class="mt-4 col-lg-5 col-sm-5 mt-sm-0">
+          <div class="col-lg-3 col-sm-3">
             <card :title="stats.clients.title" :value="stats.clients.value" :percentage="stats.clients.percentage"
               :icon-class="stats.clients.iconClass" :icon-background="stats.iconBackground"
               :percentage-color="stats.clients.percentageColor" direction-reverse></card>
+          </div>
+          <div class="col-lg-3 col-sm-3">
             <card :title="stats.sales.title" :value="stats.sales.value" :percentage="stats.sales.percentage"
               :icon-class="stats.sales.iconClass" :icon-background="stats.iconBackground" direction-reverse></card>
           </div>
         </div>
         <div class="row">
-          <div class="col-12 col-md-10">
+          <div class="col-12 col-md-12">
             <div class="card">
               <div class="p-3 pb-0 card-header">
                 <div class="d-flex justify-content-between">
-                  <h6 class="mb-2">Sales by Country</h6>
+                  <h6 class="mb-2">Sales by Clinic</h6>
                 </div>
               </div>
               <div class="table-responsive">
@@ -98,9 +102,9 @@
   </div>
 </template>
 <script>
-import Card from "../components/Card.vue"
-import ActiveUsersChart from "../components/ActiveUsersChart.vue"
-import GradientLineChart from "../components/GradientLineChart.vue"
+import Card from "../components/statics/Card.vue"
+import ActiveUsersChart from "../components/statics/ActiveUsersChart.vue"
+import GradientLineChart from "../components/statics/GradientLineChart.vue"
 
 import US from "@/assets/img/icons/flags/US.png"
 import DE from "@/assets/img/icons/flags/DE.png"
