@@ -1,5 +1,5 @@
 <template>
-  <navbar btn-background="bg-gradient-success" />
+  <!-- <navbar btn-background="bg-gradient-primary" /> -->
   <div class="pt-5 m-3 page-header align-items-start min-vh-50 pb-11 border-radius-lg" :style="{
     backgroundImage:
       `url(${bgImg})`,
@@ -22,7 +22,7 @@
       <div class="mx-auto col-xl-4 col-lg-5 col-md-7">
         <div class="card z-index-0">
           <div class="pt-4 text-center card-header">
-            <h5>Sign in</h5>
+            <h5>Register with</h5>
           </div>
           <div class="px-3 row px-xl-5 px-sm-4">
             <div class="px-1 col-3 ms-auto">
@@ -73,26 +73,33 @@
                 </svg>
               </a>
             </div>
+            <div class="mt-2 position-relative text-center">
+              <p class="text-sm font-weight-bold mb-2 text-secondary text-border d-inline z-index-2 bg-white px-3">or</p>
+            </div>
           </div>
           <div class="card-body">
-            <form role="form" class="text-start">
+            <form role="form">
               <div class="mb-3">
-                <vsud-input type="email" placeholder="Email" name="email" />
+                <vsud-input id="name" type="text" placeholder="Name" aria-label="Name" />
               </div>
               <div class="mb-3">
-                <vsud-input type="password" placeholder="Password" name="password" />
+                <vsud-input id="email" type="email" placeholder="Email" aria-label="Email" />
               </div>
-              <vsud-switch id="rememberMe">Remember me</vsud-switch>
+              <div class="mb-3">
+                <vsud-input id="password" type="password" placeholder="Password" aria-label="Password" />
+              </div>
+              <vsud-checkbox id="flexCheckDefault" checked>
+                I agree the
+                <a href="javascript:;" class="text-dark font-weight-bolder">Terms and Conditions</a>
+              </vsud-checkbox>
+
               <div class="text-center">
-                <vsud-button class="my-4 mb-2" variant="gradient" color="info" full-width>Sign in</vsud-button>
+                <vsud-button color="dark" full-width variant="gradient" class="my-4 mb-2">Sign up</vsud-button>
               </div>
-              <div class="mb-2 text-center position-relative">
-                <p class="px-3 mb-2 text-sm bg-white font-weight-bold text-secondary text-border d-inline z-index-2">or
-                </p>
-              </div>
-              <div class="text-center">
-                <vsud-button class="mt-2 mb-4" variant="gradient" color="dark" full-width>Sign up</vsud-button>
-              </div>
+              <p class="text-sm mt-3 mb-0">
+                Already have an account?
+                <router-link to="signin" class="text-dark font-weight-bolder">Sign in</router-link>
+              </p>
             </form>
           </div>
         </div>
@@ -102,29 +109,16 @@
   <app-footer />
 </template>
 
-<script>
-import bgImg from '@/assets/img/curved-images/curved9.jpg';
-import Navbar from "@/examples/PageLayout/Navbar.vue";
+<script setup>
+import bgImg from '@/assets/img/curved-images/curved6.jpg';
+// import Navbar from "@/examples/PageLayout/Navbar.vue";
 import AppFooter from "@/examples/PageLayout/Footer.vue";
 import VsudInput from "@/components/VsudInput.vue";
-import VsudSwitch from "@/components/VsudSwitch.vue";
+import VsudCheckbox from "@/components/VsudCheckbox.vue";
 import VsudButton from "@/components/VsudButton.vue";
-import { useBasicStore } from "../stores/basic"
 
-const basic = useBasicStore()
-export default {
-  name: "Signin",
-  components: {
-    Navbar,
-    AppFooter,
-    VsudInput,
-    VsudSwitch,
-    VsudButton,
-  },
-  data() {
-    return { bgImg }
-  },
-  // beforeMount() {
+
+  // created() {
   //   this.$store.state.hideConfigButton = true;
   //   this.$store.state.showNavbar = false;
   //   this.$store.state.showSidenav = false;
@@ -135,11 +129,5 @@ export default {
   //   this.$store.state.showNavbar = true;
   //   this.$store.state.showSidenav = true;
   //   this.$store.state.showFooter = true;
-  // },
 
-  mounted() {
-    basic.hidConfigButton = true
-    basic.showNavBar = false
-  }
-};
 </script>

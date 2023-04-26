@@ -102,9 +102,9 @@
   </div>
 </template>
 <script>
-import Card from "../components/statics/Card.vue"
-import ActiveUsersChart from "../components/statics/ActiveUsersChart.vue"
-import GradientLineChart from "../components/statics/GradientLineChart.vue"
+import Card from "../../components/statics/Card.vue"
+import ActiveUsersChart from "../../components/statics/ActiveUsersChart.vue"
+import GradientLineChart from "../../components/statics/GradientLineChart.vue"
 
 import US from "@/assets/img/icons/flags/US.png"
 import DE from "@/assets/img/icons/flags/DE.png"
@@ -112,7 +112,7 @@ import GB from "@/assets/img/icons/flags/GB.png"
 import BR from "@/assets/img/icons/flags/BR.png"
 
 export default {
-  name: "Default",
+  name: "Statics",
   components: {
     Card,
     ActiveUsersChart,
