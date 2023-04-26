@@ -5,21 +5,11 @@
         <thead>
           <tr>
             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
-            <th
-              class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
-            >Function</th>
-            <th
-              class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"
-            >Review</th>
-            <th
-              class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
-            >Email</th>
-            <th
-              class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
-            >Employed</th>
-            <th
-              class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
-            >Id</th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Function</th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Review</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Employed</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Id</th>
           </tr>
         </thead>
         <tbody>
@@ -199,11 +189,11 @@
 
 <script>
 import VsudAvatar from "@/components/VsudAvatar.vue";
-import img1 from "../../../../assets/img/team-1.jpg";
-import img2 from "../../../../assets/img/team-2.jpg";
-import img3 from "../../../../assets/img/team-3.jpg";
-import img4 from "../../../../assets/img/team-4.jpg";
-import img5 from "../../../../assets/img/team-5.jpg";
+import img1 from "../../../assets/img/team-1.jpg";
+import img2 from "../../../assets/img/team-2.jpg";
+import img3 from "../../../assets/img/team-3.jpg";
+import img4 from "../../../assets/img/team-4.jpg";
+import img5 from "../../../assets/img/team-5.jpg";
 
 export default {
   name: "Table",

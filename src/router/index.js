@@ -12,6 +12,11 @@ import EditClinic from '../views/clinic/EditClinic.vue'
 import ClinicPage from '../views/clinic/ClinicPage.vue'
 import ClinicsList from '../views/clinic/ClinicsList.vue'
 import NewPatient from '../views/patient/NewPatient.vue'
+import Reports from '../views/patient/Reports.vue'
+import NewBooking from '../views/booking/NewBooking.vue'
+import General from '../views/booking/General.vue'
+import Timeline from '../views/booking/Timeline.vue'
+
 
 const routes = [
   {
@@ -78,6 +83,26 @@ const routes = [
     path: "/newpatient",
     name: "newpatient",
     component: NewPatient
+  },
+  {
+    path: "/reports",
+    name: "reports",
+    component: Reports
+  },
+  {
+    path: "/newbooking",
+    name: "newbooking",
+    component: NewBooking
+  },
+  {
+    path: "/general",
+    name: "general",
+    component: General
+  },
+  {
+    path: "/timeline",
+    name: "timeline",
+    component: Timeline
   }
 ]
 
