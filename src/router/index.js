@@ -16,6 +16,10 @@ import Reports from '../views/patient/Reports.vue'
 import NewBooking from '../views/booking/NewBooking.vue'
 import General from '../views/booking/General.vue'
 import Timeline from '../views/booking/Timeline.vue'
+import Settings from '../views/account/Settings.vue'
+import Security from '../views/account/Security.vue'
+import Income from '../views/clinic/Income.vue'
+import Pricing from '../views/account/Pricing.vue'
 
 
 const routes = [
@@ -103,7 +107,28 @@ const routes = [
     path: "/timeline",
     name: "timeline",
     component: Timeline
+  },
+  {
+    path: "/settings",
+    name: "settings",
+    component: Settings
+  },
+  {
+    path: "/security",
+    name: "security",
+    component: Security
+  },
+  {
+    path: "/income",
+    name: "income",
+    component: Income
+  },
+  {
+    path: "/pricing",
+    name: "pricing",
+    component: Pricing
   }
+
 ]
 
 const router = createRouter({
