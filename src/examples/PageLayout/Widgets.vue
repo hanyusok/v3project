@@ -2,24 +2,10 @@
   <div class="container-fluid py-4">
     <div class="row">
       <div class="col-lg-3 col-md-6">
-        <card
-          class="bg-gradient-success p-0"
-          title="Battery Health"
-          value="99 %"
-          icon-class="text-dark ni ni-controller"
-          title-color="opacity-7 text-white"
-          value-color="text-white"
-          direction-reverse
-        />
-        <card
-          class="bg-gradient-success p-0"
-          title="Music Volume"
-          value="15/100"
-          icon-class="text-dark ni ni-note-03"
-          title-color="opacity-7 text-white"
-          value-color="text-white"
-          direction-reverse
-        />
+        <card class="bg-gradient-success p-0" title="Battery Health" value="99 %" icon-class="text-dark ni ni-controller"
+          title-color="opacity-7 text-white" value-color="text-white" direction-reverse />
+        <card class="bg-gradient-success p-0" title="Music Volume" value="15/100" icon-class="text-dark ni ni-note-03"
+          title-color="opacity-7 text-white" value-color="text-white" direction-reverse />
       </div>
       <div class="col-lg-3 col-md-6">
         <income-chart />
@@ -35,20 +21,12 @@
       <div class="col-lg-4 col-sm-6">
         <div class="row">
           <div class="col-md-6">
-            <default-info-card
-              :class-icon="salary.classIcon"
-              :title="salary.title"
-              :desc="salary.desc"
-              :price="salary.price"
-            />
+            <default-info-card :class-icon="salary.classIcon" :title="salary.title" :desc="salary.desc"
+              :price="salary.price" />
           </div>
           <div class="col-md-6">
-            <default-info-card
-              :class-icon="paypal.classIcon"
-              :title="paypal.title"
-              :desc="paypal.desc"
-              :price="paypal.price"
-            />
+            <default-info-card :class-icon="paypal.classIcon" :title="paypal.title" :desc="paypal.desc"
+              :price="paypal.price" />
           </div>
         </div>
       </div>
@@ -90,21 +68,20 @@
 
 <script>
 import Card from "../components/Card.vue"
-//start here
-import TasksCard from "./projects/components/TasksCard.vue";
-import DefaultInfoCard from "@/examples/Cards/DefaultInfoCard.vue";
-import MasterCard from "@/examples/Cards/MasterCard.vue";
-import IncomeChart from "./components/IncomeChart.vue";
-import CaloriesChart from "./components/CaloriesChart.vue";
-import EventsCard from "./components/EventsCard.vue";
-import FullBodyCard from "./components/FullBodyCard.vue";
-import ControllerCard from "./components/ControllerCard.vue";
-import MiniInfoCard from "./components/MiniInfoCard.vue";
-import StepsCard from "./components/StepsCard.vue";
-import Calendar from "@/examples/Calendar.vue";
-import CategoriesCard from "../dashboards/components/CategoriesCard.vue";
-import MusicPlayer from "./components/MusicPlayer.vue";
-import OrdersCard from "./components/OrdersCard.vue";
+import TasksCard from "../../views/booking/components/TasksCard.vue"
+import DefaultInfoCard from "../../examples/components/DefaultInfoCard.vue"
+import MasterCard from "../../views/clinic/components/MasterCard.vue";
+import IncomeChart from "../components/IncomeChart.vue";
+import CaloriesChart from "../components/CaloriesChart.vue";
+import EventsCard from "../components/EventsCard.vue";
+import FullBodyCard from "../components/FullBodyCard.vue";
+import ControllerCard from "../components/ControllerCard.vue";
+import MiniInfoCard from "../components/MiniInfoCard.vue";
+import StepsCard from "../components/StepsCard.vue";
+import Calendar from "../components/Calendar.vue";
+import CategoriesCard from "../components/CategoriesCard.vue";
+import MusicPlayer from "../components/MusicPlayer.vue";
+import OrdersCard from "../components/OrdersCard.vue";
 
 export default {
   name: "Widgets",
