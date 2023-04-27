@@ -1,23 +1,23 @@
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useBasicStore = defineStore('basic', () => {  
-  const isNavFixed = ref(false)
-  const isDarkMode = ref(false)
-  const isSidebarMini = ref(false)
-  const hideConfigButton = ref(false)
-  const isTransparent = ref(true)
-  const isPinned = ref(true)
-  const isRTL = ref(false)
-  const showConfig = ref(false)
-  const sidebarColor = ref("success")
-  const isAbsolute = ref(false)
-  const showNavs = ref(true)
-  const showSidenav = ref(true)
-  const showNavbar = ref(true)
-  const showFooter = ref(true)
-  const showMain= ref(true)
-  const isLargeScreen = ref(true)
+  let isNavFixed = ref(false)
+  let isDarkMode = ref(false)
+  let isSidebarMini = ref(false)
+  let hideConfigButton = ref(false)
+  let isTransparent = ref(true)
+  let isPinned = ref(true)
+  let isRTL = ref(false)
+  let showConfig = ref(false)
+  let sidebarColor = ref("success")
+  let isAbsolute = ref(false)
+  let showNavs = ref(true)
+  let showSidenav = ref(true)
+  let showNavbar = ref(true)
+  let showFooter = ref(true)
+  let showMain= ref(true)
+  let isLargeScreen = ref(true)
 
   function  toggleConfig() { showConfig = !showConfig }
   function  toggleRTL() { isRTL = !isRTL }
