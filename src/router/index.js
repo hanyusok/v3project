@@ -20,7 +20,10 @@ import Settings from '../views/account/Settings.vue'
 import Security from '../views/account/Security.vue'
 import Income from '../views/clinic/Income.vue'
 import Pricing from '../views/account/Pricing.vue'
-
+import Charts from '../examples/PageLayout/Charts.vue'
+import Notifications from '../examples/PageLayout/Notifications.vue'
+import SweetAlerts from '../examples/PageLayout/SweetAlerts.vue'
+import Widgets from '../examples/PageLayout/Widgets.vue'
 
 const routes = [
   {
@@ -127,6 +130,26 @@ const routes = [
     path: "/pricing",
     name: "pricing",
     component: Pricing
+  },
+  {
+    path: "/charts",
+    name: "charts",
+    component: Charts
+  },
+  {
+    path: "/notifications",
+    name: "notifications",
+    component: Notifications
+  },
+  {
+    path: "/sweetalerts",
+    name: "sweetalerts",
+    component: SweetAlerts
+  },
+  {
+    path: "/widgets",
+    name: "widgets",
+    component: Widgets
   }
 
 ]

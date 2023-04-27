@@ -89,7 +89,8 @@
 </template>
 
 <script>
-import Card from "@/examples/Cards/Card.vue";
+import Card from "../components/Card.vue"
+//start here
 import TasksCard from "./projects/components/TasksCard.vue";
 import DefaultInfoCard from "@/examples/Cards/DefaultInfoCard.vue";
 import MasterCard from "@/examples/Cards/MasterCard.vue";
