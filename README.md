@@ -33,3 +33,8 @@ npm run build
 https://getbootstrap.com/docs/4.0/utilities/spacing/
 ```
 
+```sh
+https://www.npmjs.com/package/pinia-firestore
+```
+
+

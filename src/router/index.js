@@ -27,6 +27,10 @@ import Widgets from '../examples/PageLayout/Widgets.vue'
 
 const routes = [
   {
+    path: "/",
+    redirect: "reports"    
+  },
+  {
     path: "/statics",
     name: "statics",
     component: Statics
@@ -156,8 +160,7 @@ const routes = [
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
-  routes,
-  linkActiveClass: "active",
+  routes
 })
 
 export default router;
