@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { db } from '@/firebase.js'
 import { collection, addDoc } from 'firebase/firestore'
+import router from '@/router/index'
 
 export const useClinicStore = defineStore('clinic', {  
   state: () => ({    
@@ -51,6 +52,7 @@ export const useClinicStore = defineStore('clinic', {
       })
       let respId = docu.id
       console.log(`document id: ${respId} added.`)
+      router.push('cliniclist')      
     },
 
     getClinic(){},
