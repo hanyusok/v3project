@@ -47,38 +47,34 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import Quill from "quill";
 import Choices from "choices.js";
 import VsudButton from "@/components/VsudButton.vue";
+import { onMounted } from "vue";
 
-export default {
-  name: "ClinicInfo",
-  components: {
-    VsudButton,
-  },
-  mounted() {
-    if (document.getElementById("edit-description")) {
-      // eslint-disable-next-line no-unused-vars
-      var quill = new Quill("#edit-description", {
-        theme: "snow", // Specify theme in configuration
-      });
-    }
-    if (document.getElementById("choices-category")) {
-      var element = document.getElementById("choices-category");
-      new Choices(element, {
-        searchEnabled: false,
-        allowHTML: true
-      });
-    }
+onMounted(() => {
+  if (document.getElementById("edit-description")) {
+    // eslint-disable-next-line no-unused-vars
+    var quill = new Quill("#edit-description", {
+      theme: "snow", // Specify theme in configuration
+    })
+  }
+  if (document.getElementById("choices-category")) {
+    var element = document.getElementById("choices-category");
+    new Choices(element, {
+      searchEnabled: false,
+      allowHTML: true
+    })
+  }
 
-    if (document.getElementById("choices-sizes")) {
-      let element = document.getElementById("choices-sizes");
-      new Choices(element, {
-        searchEnabled: false,
-        allowHTML: true
-      });
-    }
-  },
-};
+  if (document.getElementById("choices-sizes")) {
+    let element = document.getElementById("choices-sizes");
+    new Choices(element, {
+      searchEnabled: false,
+      allowHTML: true
+    })
+  }
+})
+
 </script>

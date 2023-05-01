@@ -62,7 +62,7 @@
           </div>
           <div class="px-0 pb-0 card-body">
             <div class="table-responsive">
-              <table id="products-list" class="table table-flush">
+              <table id="clinic-list" class="table table-flush">
                 <thead class="thead-light">
                   <tr>
                     <th>Clinic Name</th>
@@ -95,13 +95,13 @@
                       <span class="badge badge-danger badge-sm">Out of Stock</span>
                     </td>
                     <td class="text-sm">
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview clinic">
                         <i class="fas fa-eye text-secondary"></i>
                       </a>
-                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
+                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit clinic">
                         <i class="fas fa-user-edit text-secondary"></i>
                       </a>
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete clinic">
                         <i class="fas fa-trash text-secondary"></i>
                       </a>
                     </td>
@@ -126,13 +126,13 @@
                       <span class="badge badge-danger badge-sm">Out of Stock</span>
                     </td>
                     <td class="text-sm">
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview clinic">
                         <i class="fas fa-eye text-secondary"></i>
                       </a>
-                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
+                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit clinic">
                         <i class="fas fa-user-edit text-secondary"></i>
                       </a>
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete clinic">
                         <i class="fas fa-trash text-secondary"></i>
                       </a>
                     </td>
@@ -157,13 +157,13 @@
                       <span class="badge badge-success badge-sm">in Stock</span>
                     </td>
                     <td class="text-sm">
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview clinic">
                         <i class="fas fa-eye text-secondary"></i>
                       </a>
-                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
+                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit clinic">
                         <i class="fas fa-user-edit text-secondary"></i>
                       </a>
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete clinic">
                         <i class="fas fa-trash text-secondary"></i>
                       </a>
                     </td>
@@ -188,13 +188,13 @@
                       <span class="badge badge-danger badge-sm">Out of Stock</span>
                     </td>
                     <td class="text-sm">
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview clinic">
                         <i class="fas fa-eye text-secondary"></i>
                       </a>
-                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
+                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit clinic">
                         <i class="fas fa-user-edit text-secondary"></i>
                       </a>
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete clinic">
                         <i class="fas fa-trash text-secondary"></i>
                       </a>
                     </td>
@@ -219,13 +219,13 @@
                       <span class="badge badge-success badge-sm">in Stock</span>
                     </td>
                     <td class="text-sm">
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview clinic">
                         <i class="fas fa-eye text-secondary"></i>
                       </a>
-                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
+                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit clinic">
                         <i class="fas fa-user-edit text-secondary"></i>
                       </a>
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete clinic">
                         <i class="fas fa-trash text-secondary"></i>
                       </a>
                     </td>
@@ -250,13 +250,13 @@
                       <span class="badge badge-success badge-sm">in Stock</span>
                     </td>
                     <td class="text-sm">
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview clinic">
                         <i class="fas fa-eye text-secondary"></i>
                       </a>
-                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
+                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit clinic">
                         <i class="fas fa-user-edit text-secondary"></i>
                       </a>
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete clinic">
                         <i class="fas fa-trash text-secondary"></i>
                       </a>
                     </td>
@@ -281,13 +281,13 @@
                       <span class="badge badge-success badge-sm">In Stock</span>
                     </td>
                     <td class="text-sm">
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview clinic">
                         <i class="fas fa-eye text-secondary"></i>
                       </a>
-                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
+                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit clinic">
                         <i class="fas fa-user-edit text-secondary"></i>
                       </a>
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete clinic">
                         <i class="fas fa-trash text-secondary"></i>
                       </a>
                     </td>
@@ -312,13 +312,13 @@
                       <span class="badge badge-success badge-sm">in Stock</span>
                     </td>
                     <td class="text-sm">
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview clinic">
                         <i class="fas fa-eye text-secondary"></i>
                       </a>
-                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
+                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit clinic">
                         <i class="fas fa-user-edit text-secondary"></i>
                       </a>
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete clinic">
                         <i class="fas fa-trash text-secondary"></i>
                       </a>
                     </td>
@@ -343,13 +343,13 @@
                       <span class="badge badge-success badge-sm">In Stock</span>
                     </td>
                     <td class="text-sm">
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview clinic">
                         <i class="fas fa-eye text-secondary"></i>
                       </a>
-                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
+                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit clinic">
                         <i class="fas fa-user-edit text-secondary"></i>
                       </a>
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete clinic">
                         <i class="fas fa-trash text-secondary"></i>
                       </a>
                     </td>
@@ -374,13 +374,13 @@
                       <span class="badge badge-danger badge-sm">Out of Stock</span>
                     </td>
                     <td class="text-sm">
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview clinic">
                         <i class="fas fa-eye text-secondary"></i>
                       </a>
-                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
+                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit clinic">
                         <i class="fas fa-user-edit text-secondary"></i>
                       </a>
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete clinic">
                         <i class="fas fa-trash text-secondary"></i>
                       </a>
                     </td>
@@ -405,13 +405,13 @@
                       <span class="badge badge-success badge-sm">in Stock</span>
                     </td>
                     <td class="text-sm">
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview clinic">
                         <i class="fas fa-eye text-secondary"></i>
                       </a>
-                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
+                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit clinic">
                         <i class="fas fa-user-edit text-secondary"></i>
                       </a>
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete clinic">
                         <i class="fas fa-trash text-secondary"></i>
                       </a>
                     </td>
@@ -436,13 +436,13 @@
                       <span class="badge badge-success badge-sm">in Stock</span>
                     </td>
                     <td class="text-sm">
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview clinic">
                         <i class="fas fa-eye text-secondary"></i>
                       </a>
-                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
+                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit clinic">
                         <i class="fas fa-user-edit text-secondary"></i>
                       </a>
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete clinic">
                         <i class="fas fa-trash text-secondary"></i>
                       </a>
                     </td>
@@ -467,13 +467,13 @@
                       <span class="badge badge-success badge-sm">in Stock</span>
                     </td>
                     <td class="text-sm">
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview clinic">
                         <i class="fas fa-eye text-secondary"></i>
                       </a>
-                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
+                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit clinic">
                         <i class="fas fa-user-edit text-secondary"></i>
                       </a>
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete clinic">
                         <i class="fas fa-trash text-secondary"></i>
                       </a>
                     </td>
@@ -498,13 +498,13 @@
                       <span class="badge badge-danger badge-sm">Out of Stock</span>
                     </td>
                     <td class="text-sm">
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview clinic">
                         <i class="fas fa-eye text-secondary"></i>
                       </a>
-                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
+                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit clinic">
                         <i class="fas fa-user-edit text-secondary"></i>
                       </a>
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete clinic">
                         <i class="fas fa-trash text-secondary"></i>
                       </a>
                     </td>
@@ -529,13 +529,13 @@
                       <span class="badge badge-success badge-sm">in Stock</span>
                     </td>
                     <td class="text-sm">
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Preview clinic">
                         <i class="fas fa-eye text-secondary"></i>
                       </a>
-                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit product">
+                      <a href="javascript:;" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit clinic">
                         <i class="fas fa-user-edit text-secondary"></i>
                       </a>
-                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete product">
+                      <a href="javascript:;" data-bs-toggle="tooltip" data-bs-original-title="Delete clinic">
                         <i class="fas fa-trash text-secondary"></i>
                       </a>
                     </td>
@@ -568,8 +568,8 @@ import setTooltip from "@/assets/js/tooltip.js";
 export default {
   name: "ClinicsList",
   mounted() {
-    if (document.getElementById("products-list")) {
-      const dataTableSearch = new DataTable("#products-list", {
+    if (document.getElementById("clinic-list")) {
+      const dataTableSearch = new DataTable("#clinic-list", {
         searchable: true,
         fixedHeight: false,
         perPage: 7,

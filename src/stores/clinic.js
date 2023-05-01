@@ -3,24 +3,24 @@ import { defineStore } from 'pinia'
 import { db } from '@/firebase.js'
 import { collection, addDoc, FieldValue } from 'firebase/firestore'
 
-export type TypeClinic = {
-  clinicName: String;
-  doctorName: String;
-  create: FieldValue;
-}
-
 export const useClinicStore = defineStore('clinic', {  
-  state: () => ({
-    clinics: [] as (TypeClinic)[] 
-  }),
+  state: () => {
+    return {
+      clinics: [],
+      clinic: {}  
+    }    
+  },
   
   getters: {
     count: (state) => { return state.clinics.length }
   },
 
   actions: {
+    init(){
+      const docuRef = collection(db, "clinics")
+    },
     async addClinic(){
-      const DocuRef = addDoc(collection(db, "clinics")), {
+      const DocuRef = addDoc(this.docuRef, {
         // clinicName: "",
 
       }

@@ -10,7 +10,7 @@ import Error500 from '../views/auth/Error500.vue'
 import NewClinic from '../views/clinic/NewClinic.vue'
 import EditClinic from '../views/clinic/EditClinic.vue'
 import ClinicPage from '../views/clinic/ClinicPage.vue'
-import ClinicsList from '../views/clinic/ClinicsList.vue'
+import ClinicList from '../views/clinic/ClinicList.vue'
 import NewPatient from '../views/patient/NewPatient.vue'
 import Reports from '../views/patient/Reports.vue'
 import NewBooking from '../views/booking/NewBooking.vue'
@@ -86,9 +86,9 @@ const routes = [
     component: ClinicPage
   },
   {
-    path: "/clinicslist",
-    name: "clinicslist",
-    component: ClinicsList
+    path: "/cliniclist",
+    name: "cliniclist",
+    component: ClinicList
   },
   {
     path: "/newpatient",
@@ -160,7 +160,7 @@ const routes = [
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
-  routes
+  routes  
 })
 
 export default router;

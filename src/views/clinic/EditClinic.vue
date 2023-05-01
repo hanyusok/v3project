@@ -18,7 +18,7 @@
       <div class="col-lg-4">
         <div class="card h-100">
           <div class="card-body">
-            <h5 class="font-weight-bolder">Product Image</h5>
+            <h5 class="font-weight-bolder">Clinic Image</h5>
             <div class="row">
               <div class="col-12">
                 <img class="mt-3 shadow-lg w-100 border-radius-lg"
