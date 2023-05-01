@@ -5,11 +5,11 @@
       <div class="mt-3 row">
         <div class="col-12 col-sm-6">
           <label>Name</label>
-          <input class="multisteps-form__input form-control" type="text" placeholder="eg. Off-White" />
+          <input class="multisteps-form__input form-control" type="text" placeholder="eg. 마트의원" />
         </div>
         <div class="mt-3 col-12 col-sm-6 mt-sm-0">
-          <label>Weight</label>
-          <input class="multisteps-form__input form-control" type="text" placeholder="eg. 42" />
+          <label>Doctor</label>
+          <input class="multisteps-form__input form-control" type="text" placeholder="eg. 홍길동원장" />
         </div>
       </div>
       <div class="row">
@@ -17,25 +17,25 @@
           <label class="mt-4">Description</label>
           <p class="text-xs form-text text-muted ms-1 d-inline">(optional)</p>
           <div id="edit-description" class="h-50">
-            <p>Some initial <strong>bold</strong> text</p>
+            <p>간단한 병원소개 <strong>특징</strong> ..장점</p>
           </div>
         </div>
         <div class="mt-4 col-sm-6 mt-sm-0">
           <label class="mt-4">Category</label>
           <select id="choices-category" class="form-control" name="choices-category">
-            <option value="Choice 1" selected="">Clothing</option>
-            <option value="Choice 2">Real Estate</option>
-            <option value="Choice 3">Electronics</option>
-            <option value="Choice 4">Furniture</option>
-            <option value="Choice 5">Others</option>
+            <option value="Choice 1" selected="">가정의학과</option>
+            <option value="Choice 2">내과</option>
+            <option value="Choice 3">소아과</option>
+            <option value="Choice 4">이빈인후과</option>
+            <option value="Choice 5">기타</option>
           </select>
-          <label>Sizes</label>
+          <label>주요 진료분야</label>
           <select id="choices-sizes" class="form-control" name="choices-sizes">
-            <option value="Choice 1" selected="">Medium</option>
-            <option value="Choice 2">Small</option>
-            <option value="Choice 3">Large</option>
-            <option value="Choice 4">Extra Large</option>
-            <option value="Choice 5">Extra Small</option>
+            <option value="Choice 1" selected="">건강보험 대상</option>
+            <option value="Choice 2">비급여 진료</option>
+            <option value="Choice 3">피부 비만 레이저 시술</option>
+            <option value="Choice 4">수액치료</option>
+            <option value="Choice 5">기타</option>
           </select>
         </div>
       </div>

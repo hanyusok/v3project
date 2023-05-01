@@ -7,11 +7,11 @@
     <div class="multisteps-form__content">
       <div class="mt-3 row">
         <div class="col-12">
-          <label>Shoppify Handle</label>
+          <label>KakaoTalk Account</label>
           <vsud-input
             class="multisteps-form__input"
             type="text"
-            placeholder="@soft"
+            placeholder="@kakao.com"
           />
         </div>
         <div class="mt-3 col-12">
@@ -56,15 +56,8 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import VsudInput from "@/components/VsudInput.vue";
 import VsudButton from "@/components/VsudButton.vue";
 
-export default {
-  name: "Socials",
-  components: {
-    VsudInput,
-    VsudButton,
-  },
-};
 </script>

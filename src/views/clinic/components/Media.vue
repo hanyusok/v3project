@@ -7,9 +7,9 @@
     <div class="multisteps-form__content">
       <div class="mt-3 row">
         <div class="col-12">
-          <label>Product images</label>
+          <label>Clinic images</label>
           <div
-            id="productImg"
+            id="clinicImg"
             action="/file-upload"
             class="form-control dropzone"
           ></div>
