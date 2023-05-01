@@ -118,7 +118,7 @@
                 <button class="multisteps-form__progress-btn" type="button" title="Socials"
                   :class="activeStep >= 2 ? activeClass : ''" @click="activeStep = 2">3. Socials</button>
                 <button class="multisteps-form__progress-btn" type="button" title="Pricing"
-                  :class="activeStep >= 3 ? activeClass : ''" @click="activeStep = 3">4. Pricing</button>
+                  :class="activeStep >= 3 ? activeClass : ''" @click="activeStep = 3">4. Speciality</button>
               </div>
             </div>
           </div>
@@ -133,7 +133,7 @@
                 <!--single form panel-->
                 <socials :class="activeStep === 2 ? activeClass : ''" />
                 <!--single form panel-->
-                <pricing :class="activeStep === 3 ? activeClass : ''" />
+                <speciality :class="activeStep === 3 ? activeClass : ''" />
               </form>
             </div>
           </div>
@@ -145,11 +145,10 @@
 
 <script>
 import bgImg from '@/assets/img/curved-images/curved14.jpg'
-// import ProductInfo from "./components/ProductInfo.vue";
 import ClinicInfo from './components/ClinicInfo.vue';
 import Media from "./components/Media.vue";
 import Socials from "./components/Socials.vue";
-import Pricing from "./components/Pricing.vue";
+import Speciality from "./components/Speciality.vue";
 
 import setNavPills from "@/assets/js/nav-pills.js";
 import { useBasicStore } from '../../stores/basic';
@@ -159,7 +158,7 @@ export default {
     ClinicInfo,
     Media,
     Socials,
-    Pricing,
+    Speciality,
   },
   data() {
     return {

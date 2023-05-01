@@ -38,13 +38,7 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import VsudButton from "@/components/VsudButton.vue";
 
-export default {
-  name: "Media",
-  components: {
-    VsudButton,
-  },
-};
 </script>
