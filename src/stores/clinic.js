@@ -1,37 +1,62 @@
-import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import { db } from '@/firebase.js'
-import { collection, addDoc, FieldValue } from 'firebase/firestore'
+import { collection, addDoc } from 'firebase/firestore'
 
 export const useClinicStore = defineStore('clinic', {  
-  state: () => {
-    return {
+  state: () => ({    
       clinics: [],
-      clinic: {}  
-    }    
-  },
+      clinicId: "",
+      userId: "",
+      clinicName: "",
+      doctorName: "",
+      description: "",
+      category: "",
+      clinicImg: "",
+      kakaoAct: "",
+      facebookAct: "",
+      instaAct: "",      
+      field: "",
+      phone: "",
+      title: "",
+      speciality: "",
+      tags: [],
+      createdAt: "",
+      updatedAt: ""        
+  }),
   
   getters: {
     count: (state) => { return state.clinics.length }
   },
 
-  actions: {
-    init(){
-      const docuRef = collection(db, "clinics")
-    },
+  actions: {    
     async addClinic(){
-      const DocuRef = addDoc(this.docuRef, {
-        // clinicName: "",
+      const colRef = collection(db, "clinics")
+      const docu = await addDoc(colRef, {                
+        userId: "",
+        clinicName: this.clinicName,
+        doctorName: this.doctorName,
+        description: this.description,
+        category: this.category,
+        clinicImg: this.clinicImg,
+        kakaoAct: this.kakaoAct,
+        facebookAct: this.facebookAct,
+        instaAct: this.instaAct,        
+        field: this.field,
+        phone: this.phone,
+        title: this.title,
+        speciality: this.speciality,
+        tags: this.tags,
+        createdAt: Date.now(),
+        updatedAt: "" 
+      })
+      let respId = docu.id
+      console.log(`document id: ${respId} added.`)
+    },
 
-      }
-    }
+    getClinic(){},
+    editClinic(){},
+    deleteClinic(){},
+    resetClinic(){}
   }
-  
-  // const DocuRef = addDoc(collection(db, "clinics"), {
-  //   test: "han"
-  // })
-  // console.log('doc id: ', DocuRef.id)  
-  
-  // }
-)
+})
 
