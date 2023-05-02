@@ -61,7 +61,7 @@
           </div>
           <div class="px-0 pb-0 card-body">
             <div class="table-responsive">
-              <table id="clinic-list" class="table table-flush">
+              <!-- <table id="clinic-list" class="table table-flush">
                 <thead class="thead-light">
                   <tr>
                     <th>Clinic Name</th>
@@ -74,7 +74,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                 <tr>
                     <td>
                       <div class="d-flex">
                         <div class="my-auto form-check">
@@ -551,7 +551,9 @@
                     <th>Action</th>
                   </tr>
                 </tfoot>
-              </table>
+              </table> -->
+              <table id="clinic-table"></table>
+            
             </div>
           </div>
         </div>
@@ -562,27 +564,62 @@
 
 <script setup>
 import { DataTable } from "simple-datatables";
-import setTooltip from "@/assets/js/tooltip.js";
+// import setTooltip from "@/assets/js/tooltip.js";
 import { useClinicStore } from "../../stores/clinic";
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
+import { db } from '@/firebase'
+import { query, onSnapshot, collection, orderBy } from "firebase/firestore";
 
-const clinicStore = useClinicStore()
 
-onMounted(() => {     
+const colRef = collection(db, "clinics")
+const q = query(colRef, orderBy('createdAt', 'asc'))
+const listRef = ref([])
+let cliniclist = listRef.value
 
-    if (document.getElementById("clinic-list")) {
-      const dataTableSearch = new DataTable("#clinic-list", { searchable: true, fixedHeight: false, perPage: 7})
+const unsub = onSnapshot(q, (snap) => {
+  snap.docChanges().forEach((change) => {
+    let changedata = change.doc.data()
+    changedata.id = change.doc.id
+    if (change.type === "added"){
+      cliniclist.unshift(changedata)
+    }
+    if (change.type === "modified"){
+      let index = cliniclist.findIndex(listRef => listRef.id === changedata.id )
+      Object.assign(cliniclist[index], changedata)
+    }
+    if (change.type === "removed"){
+      let index = cliniclist.findIndex(listRef => listRef.id === changedata.id)
+      cliniclist.splice(index, 1)
+    }
+ })
+},
+(err) => { console.log(err) }
+)
+
+
+
+// onMounted(() => { 
+//     if (document.getElementById("clinic-list")) {
+//       const dataTableSearch = new DataTable("#clinic-list", { searchable: true, fixedHeight: false, perPage: 7})
     
-      document.querySelectorAll(".export").forEach(function (el) {
-        el.addEventListener("click", function () {
-          var type = el.dataset.type
-          var data = { type: type,  filename: "soft-ui-" + type }
+//       document.querySelectorAll(".export").forEach(function (el) {
+//         el.addEventListener("click", function () {
+//           var type = el.dataset.type
+//           var data = { type: type,  filename: "soft-ui-" + type }
 
-          if (type === "csv") { data.columnDelimiter = "|"  }
-          dataTableSearch.export(data);
-        })
-      })
-    }    
-    setTooltip()
-  })
+//           if (type === "csv") { data.columnDelimiter = "|"  }
+//           dataTableSearch.export(data);
+//         })
+//       })
+//     }    
+//     setTooltip()
+//   })
+
+let clinicListTable =document.querySelector("#clinic-table")
+let dataTable = new DataTable("#clinic-table", {
+  searchable: true,
+  fixedHeight: true,
+  data: cliniclist
+})
+
 </script>
