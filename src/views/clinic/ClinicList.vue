@@ -9,8 +9,7 @@
               <div>
                 <h5 class="mb-0">All Clinics</h5>
                 <p class="mb-0 text-sm">
-                  A lightweight, extendable, dependency-free javascript HTML
-                  table plugin.
+                  고객이 좀더 가깝게 접근할 수 있는 의원리스트입니다.
                 </p>
               </div>
               <div class="my-auto mt-4 ms-auto mt-lg-0">
@@ -561,38 +560,29 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { DataTable } from "simple-datatables";
 import setTooltip from "@/assets/js/tooltip.js";
+import { useClinicStore } from "../../stores/clinic";
+import { onMounted } from "vue";
 
-export default {
-  name: "ClinicsList",
-  mounted() {
+const clinicStore = useClinicStore()
+
+onMounted(() => {     
+
     if (document.getElementById("clinic-list")) {
-      const dataTableSearch = new DataTable("#clinic-list", {
-        searchable: true,
-        fixedHeight: false,
-        perPage: 7,
-      });
-
+      const dataTableSearch = new DataTable("#clinic-list", { searchable: true, fixedHeight: false, perPage: 7})
+    
       document.querySelectorAll(".export").forEach(function (el) {
         el.addEventListener("click", function () {
-          var type = el.dataset.type;
+          var type = el.dataset.type
+          var data = { type: type,  filename: "soft-ui-" + type }
 
-          var data = {
-            type: type,
-            filename: "soft-ui-" + type,
-          };
-
-          if (type === "csv") {
-            data.columnDelimiter = "|";
-          }
-
+          if (type === "csv") { data.columnDelimiter = "|"  }
           dataTableSearch.export(data);
-        });
-      });
-    }
-    setTooltip();
-  },
-};
+        })
+      })
+    }    
+    setTooltip()
+  })
 </script>

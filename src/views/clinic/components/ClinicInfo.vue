@@ -49,7 +49,7 @@
 </template>
 
 <script setup>
-import Quill from "quill";
+// import Quill from "quill";
 import Choices from "choices.js";
 import VsudButton from "@/components/VsudButton.vue";
 import { onMounted } from "vue";

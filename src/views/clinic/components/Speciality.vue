@@ -87,7 +87,6 @@ onMounted(() => {
       false,
     );
   }
-},
-)
+})
 
 </script>

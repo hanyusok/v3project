@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { db } from '@/firebase.js'
-import { collection, addDoc } from 'firebase/firestore'
+import { collection, addDoc, onSnapshot } from 'firebase/firestore'
 import router from '@/router/index'
 
 export const useClinicStore = defineStore('clinic', {  
@@ -55,7 +55,15 @@ export const useClinicStore = defineStore('clinic', {
       router.push('cliniclist')      
     },
 
-    getClinic(){},
+    getClinicList(){
+      const colRef = collection(db, "clinics")
+      const unsub = onSnapshot(colRef, (doc) => {
+        let clinicList = doc.data()
+        console.log(clinicList)
+      })
+
+    },
+
     editClinic(){},
     deleteClinic(){},
     resetClinic(){}
