@@ -552,8 +552,20 @@
                   </tr>
                 </tfoot>
               </table> -->
-              <table id="clinic-table"></table>
-            
+              <table id="clinic-table" class="table table-flush">
+                <!--                 <thead class="thead-light">
+                  <tr>
+                    <th>clinicName</th>
+                    <th>category</th>
+                    <th>doctorName</th>
+                    <th>phone</th>
+                    <th>title</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead> -->
+              </table>
+              {{ clinics }}
             </div>
           </div>
         </div>
@@ -565,43 +577,73 @@
 <script setup>
 import { DataTable } from "simple-datatables";
 // import setTooltip from "@/assets/js/tooltip.js";
-import { useClinicStore } from "../../stores/clinic";
-import { onMounted, ref } from "vue";
+//import { useClinicStore } from "../../stores/clinic";
+import { onMounted, onUpdated, ref } from "vue";
 import { db } from '@/firebase'
 import { query, onSnapshot, collection, orderBy } from "firebase/firestore";
 
-
+//firestore 
 const colRef = collection(db, "clinics")
 const q = query(colRef, orderBy('createdAt', 'asc'))
 const listRef = ref([])
-let cliniclist = listRef.value
-
+let clinics = listRef.value
 const unsub = onSnapshot(q, (snap) => {
   snap.docChanges().forEach((change) => {
     let changedata = change.doc.data()
     changedata.id = change.doc.id
-    if (change.type === "added"){
-      cliniclist.unshift(changedata)
+    if (change.type === "added") {
+      clinics.unshift(changedata)
+      console.log(`id: ${changedata.id} added.`)
     }
-    if (change.type === "modified"){
-      let index = cliniclist.findIndex(listRef => listRef.id === changedata.id )
-      Object.assign(cliniclist[index], changedata)
+    if (change.type === "modified") {
+      let index = clinics.findIndex(listRef => listRef.id === changedata.id)
+      Object.assign(clinics[index], changedata)
+      console.log(`id: ${changedata.id} modified.`)
     }
-    if (change.type === "removed"){
-      let index = cliniclist.findIndex(listRef => listRef.id === changedata.id)
-      cliniclist.splice(index, 1)
+    if (change.type === "removed") {
+      let index = clinics.findIndex(listRef => listRef.id === changedata.id)
+      clinics.splice(index, 1)
+      console.log(`id: ${changedata.id} modified.`)
     }
- })
+  })
 },
-(err) => { console.log(err) }
+  (err) => { console.log(err) }
 )
+console.log('firestore connected')
+console.log(clinics)
+
+//simple datatable
+
+/* let dataTable = new DataTable("#clinic-table")
+for (let i = 0; i < clinics.length; i++) {
+  obj.data[i] = []
+  for (let p in clinics[i]) {
+    if (clinics[i].hasOwnProperty(p)) {
+      obj.data[i].push(clinics[i][p])
+    }
+  }
+}
+let obj = {
+  headings: Object.keys(clinics[0]),
+  data: []
+} */
 
 
 
-// onMounted(() => { 
+
+
+
+
+/*
+  dataTable.columns().remove([0, 2, 3, 6])
+  dataTable.columns().order([0, 2, 1])
+
+ */
+
+// onMounted(() => {
 //     if (document.getElementById("clinic-list")) {
 //       const dataTableSearch = new DataTable("#clinic-list", { searchable: true, fixedHeight: false, perPage: 7})
-    
+
 //       document.querySelectorAll(".export").forEach(function (el) {
 //         el.addEventListener("click", function () {
 //           var type = el.dataset.type
@@ -611,15 +653,7 @@ const unsub = onSnapshot(q, (snap) => {
 //           dataTableSearch.export(data);
 //         })
 //       })
-//     }    
+//     }
 //     setTooltip()
 //   })
-
-let clinicListTable =document.querySelector("#clinic-table")
-let dataTable = new DataTable("#clinic-table", {
-  searchable: true,
-  fixedHeight: true,
-  data: cliniclist
-})
-
 </script>
