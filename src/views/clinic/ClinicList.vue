@@ -553,6 +553,7 @@
                 </tfoot>
               </table> -->
               <table id="clinic-table" class="table table-flush">
+                {{ clinics }}
                 <!--                 <thead class="thead-light">
                   <tr>
                     <th>clinicName</th>
@@ -565,7 +566,7 @@
                   </tr>
                 </thead> -->
               </table>
-              {{ clinics }}
+
             </div>
           </div>
         </div>
@@ -613,8 +614,15 @@ console.log('firestore connected')
 console.log(clinics)
 
 //simple datatable
+/* const dataTable = new DataTable("#clinic-table", {
+  searchable: false,
+  fixedHeight: true
+}) */
 
-/* let dataTable = new DataTable("#clinic-table")
+/* let obj = {
+  headings: Object.keys(clinics[0]),
+  data: []
+}
 for (let i = 0; i < clinics.length; i++) {
   obj.data[i] = []
   for (let p in clinics[i]) {
@@ -623,11 +631,21 @@ for (let i = 0; i < clinics.length; i++) {
     }
   }
 }
-let obj = {
-  headings: Object.keys(clinics[0]),
-  data: []
-} */
+console.log(obj) */
 
+
+
+/* onMounted(() => {
+
+})
+ */
+
+
+
+
+
+
+/* let dataTable = new DataTable("#clinic-table")
 
 
 
