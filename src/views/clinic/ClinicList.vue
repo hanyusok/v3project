@@ -552,8 +552,9 @@
                   </tr>
                 </tfoot>
               </table> -->
+             <!--  {{ clinics }} -->
               <table id="clinic-table" class="table table-flush">
-                {{ clinics }}
+              
                 <!--                 <thead class="thead-light">
                   <tr>
                     <th>clinicName</th>
@@ -579,7 +580,7 @@
 import { DataTable } from "simple-datatables";
 // import setTooltip from "@/assets/js/tooltip.js";
 //import { useClinicStore } from "../../stores/clinic";
-import { onMounted, onUpdated, ref } from "vue";
+import { computed, onMounted, onUpdated, ref } from "vue";
 import { db } from '@/firebase'
 import { query, onSnapshot, collection, orderBy } from "firebase/firestore";
 
@@ -614,10 +615,13 @@ console.log('firestore connected')
 console.log(clinics)
 
 //simple datatable
-/* const dataTable = new DataTable("#clinic-table", {
-  searchable: false,
-  fixedHeight: true
-}) */
+
+/*   const dataTable = new DataTable("#clinic-table", {
+    searchable: false,
+    fixedHeight: true  
+  }) */
+
+
 
 /* let obj = {
   headings: Object.keys(clinics[0]),
