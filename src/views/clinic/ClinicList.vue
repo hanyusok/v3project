@@ -61,8 +61,8 @@
           </div>
           <div class="px-0 pb-0 card-body">
             <div class="table-responsive">
-              <table id="clinic-table" class="table table-flush">                
-            <!--<thead class="thead-light">
+              <table id="clinic-table" class="table table-flush">
+                <!--<thead class="thead-light">
                   <tr>
                     <th>clinicName</th>
                     <th>category</th>
@@ -90,16 +90,17 @@ import { computed, onMounted, onUpdated, ref } from "vue";
 import { db } from '@/firebase'
 import { query, onSnapshot, collection, orderBy } from "firebase/firestore";
 
-
-
-
-//firestore 
-const colRef = collection(db, "clinics")
-const q = query(colRef, orderBy('createdAt', 'asc'))
-const listRef = ref([])
-let clinics = listRef.value
-
 onMounted(() => {
+  //simple datatable
+  const datatable = new DataTable("#clinic-table")
+  console.log(`datatable mounted`)
+
+  //firestore 
+  const colRef = collection(db, "clinics")
+  const q = query(colRef, orderBy('createdAt', 'asc'))
+  const listRef = ref([])
+  let clinics = listRef.value
+
   const unsub = onSnapshot(q, (snap) => {
     snap.docChanges().forEach((change) => {
       let changedata = change.doc.data()
@@ -124,17 +125,10 @@ onMounted(() => {
   )
   console.log('firestore connected')
   console.log(clinics)
-
-  const datatable = new DataTable("#clinic-table")
-  console.log(`datatable mounted`)
-
+  //insert clinic data into datatable
+  //...
+  //datatable.insert(clinics)
 })
-
-
-
-//simple datatable
-
-  
 
 
 
