@@ -90,7 +90,7 @@ import { computed, onMounted, onUpdated, ref } from "vue";
 import { db } from '@/firebase'
 import { query, onSnapshot, collection, orderBy } from "firebase/firestore";
 
-const dt = ref()
+
 
 
 //firestore 
@@ -98,38 +98,43 @@ const colRef = collection(db, "clinics")
 const q = query(colRef, orderBy('createdAt', 'asc'))
 const listRef = ref([])
 let clinics = listRef.value
-const unsub = onSnapshot(q, (snap) => {
-  snap.docChanges().forEach((change) => {
-    let changedata = change.doc.data()
-    changedata.id = change.doc.id
-    if (change.type === "added") {
-      clinics.unshift(changedata)
-      console.log(`id: ${changedata.id} added.`)
-    }
-    if (change.type === "modified") {
-      let index = clinics.findIndex(listRef => listRef.id === changedata.id)
-      Object.assign(clinics[index], changedata)
-      console.log(`id: ${changedata.id} modified.`)
-    }
-    if (change.type === "removed") {
-      let index = clinics.findIndex(listRef => listRef.id === changedata.id)
-      clinics.splice(index, 1)
-      console.log(`id: ${changedata.id} modified.`)
-    }
-  })
-},
-  (err) => { console.log(err) }
-)
-console.log('firestore connected')
-console.log(clinics)
 
-
-//simple datatable
 onMounted(() => {
-  let datatable = new DataTable("#clinic-table")
+  const unsub = onSnapshot(q, (snap) => {
+    snap.docChanges().forEach((change) => {
+      let changedata = change.doc.data()
+      changedata.id = change.doc.id
+      if (change.type === "added") {
+        clinics.unshift(changedata)
+        console.log(`id: ${changedata.id} added.`)
+      }
+      if (change.type === "modified") {
+        let index = clinics.findIndex(listRef => listRef.id === changedata.id)
+        Object.assign(clinics[index], changedata)
+        console.log(`id: ${changedata.id} modified.`)
+      }
+      if (change.type === "removed") {
+        let index = clinics.findIndex(listRef => listRef.id === changedata.id)
+        clinics.splice(index, 1)
+        console.log(`id: ${changedata.id} modified.`)
+      }
+    })
+  },
+    (err) => { console.log(err) }
+  )
+  console.log('firestore connected')
+  console.log(clinics)
+
+  const datatable = new DataTable("#clinic-table")
   console.log(`datatable mounted`)
 
 })
+
+
+
+//simple datatable
+
+  
 
 
 
