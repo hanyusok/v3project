@@ -125,9 +125,22 @@ onMounted(() => {
   )
   console.log('firestore connected')
   console.log(clinics)
+
   //insert clinic data into datatable
-  //...
-  //datatable.insert(clinics)
+  let obj = {   
+    headings: Object.keys(clinics[0] || {}),    
+    data: []
+  }
+  console.log(`obj is ${obj.headings} `)
+  for ( let i = 0; i < data.length; i++ ) {
+    obj.data[i] = [];
+    for (let p in clinics[i]) {
+      if( clinics[i].hasOwnProperty(p) ) {
+          obj.data[i].push(clinics[i][p])
+        }
+    }
+  }
+  //insert obj into datatable
 })
 
 
