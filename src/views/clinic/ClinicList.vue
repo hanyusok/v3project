@@ -86,20 +86,44 @@
 <script setup>
 import { DataTable } from "simple-datatables";
 // import setTooltip from "@/assets/js/tooltip.js";
-import { computed, onMounted, onUpdated, ref } from "vue";
+import { onMounted, ref } from "vue";
 import { db } from '@/firebase'
 import { query, onSnapshot, collection, orderBy } from "firebase/firestore";
 
+
 onMounted(() => {
+
   //simple datatable
-  const datatable = new DataTable("#clinic-table")
+  const datatable = new DataTable("#clinic-table", {
+    searchable: true,
+    fixedHeight: true,
+    data: obj
+  })
   console.log(`datatable mounted`)
+
 
   //firestore 
   const colRef = collection(db, "clinics")
   const q = query(colRef, orderBy('createdAt', 'asc'))
   const listRef = ref([])
   let clinics = listRef.value
+  console.log(clinics)
+
+  //insert clinic data into datatable
+  const obj = {
+    headings: Object.keys(clinics[0] || {}),
+    data: []
+  }
+  console.log(`obj is ${obj} _before `)
+  for (let i = 0; i < clinics.length; i++) {
+    obj.data[i] = [];
+    for (let p in clinics[i]) {
+      if (clinics[i].hasOwnProperty(p)) {
+        obj.data[i].push(clinics[i][p])
+      }
+    }
+  }
+  console.log(`obj is ${obj} _after`)
 
   const unsub = onSnapshot(q, (snap) => {
     snap.docChanges().forEach((change) => {
@@ -124,24 +148,11 @@ onMounted(() => {
     (err) => { console.log(err) }
   )
   console.log('firestore connected')
-  console.log(clinics)
 
-  //insert clinic data into datatable
-  let obj = {   
-    headings: Object.keys(clinics[0] || {}),    
-    data: []
-  }
-  console.log(`obj is ${obj.headings} `)
-  for ( let i = 0; i < data.length; i++ ) {
-    obj.data[i] = [];
-    for (let p in clinics[i]) {
-      if( clinics[i].hasOwnProperty(p) ) {
-          obj.data[i].push(clinics[i][p])
-        }
-    }
-  }
-  //insert obj into datatable
+
 })
+
+
 
 
 
