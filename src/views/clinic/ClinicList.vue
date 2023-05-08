@@ -62,7 +62,7 @@
           <div class="px-0 pb-0 card-body">
             <div class="table-responsive">
               <table id="clinic-table" class="table table-flush">
-                <!--<thead class="thead-light">
+<!--                 <thead class="thead-light">
                   <tr>
                     <th>clinicName</th>
                     <th>category</th>
@@ -72,7 +72,7 @@
                     <th>Status</th>
                     <th>Action</th>
                   </tr>
-                </thead> -->
+                </thead>  -->
               </table>
 
             </div>
@@ -90,40 +90,12 @@ import { onMounted, ref } from "vue";
 import { db } from '@/firebase'
 import { query, onSnapshot, collection, orderBy } from "firebase/firestore";
 
-
-onMounted(() => {
-
-  //simple datatable
-  const datatable = new DataTable("#clinic-table", {
-    searchable: true,
-    fixedHeight: true,
-    data: obj
-  })
-  console.log(`datatable mounted`)
-
-
   //firestore 
   const colRef = collection(db, "clinics")
   const q = query(colRef, orderBy('createdAt', 'asc'))
   const listRef = ref([])
   let clinics = listRef.value
   console.log(clinics)
-
-  //insert clinic data into datatable
-  const obj = {
-    headings: Object.keys(clinics[0] || {}),
-    data: []
-  }
-  console.log(`obj is ${obj} _before `)
-  for (let i = 0; i < clinics.length; i++) {
-    obj.data[i] = [];
-    for (let p in clinics[i]) {
-      if (clinics[i].hasOwnProperty(p)) {
-        obj.data[i].push(clinics[i][p])
-      }
-    }
-  }
-  console.log(`obj is ${obj} _after`)
 
   const unsub = onSnapshot(q, (snap) => {
     snap.docChanges().forEach((change) => {
@@ -148,6 +120,35 @@ onMounted(() => {
     (err) => { console.log(err) }
   )
   console.log('firestore connected')
+
+
+
+onMounted(() => {
+
+  //simple datatable and insert clinic data into datatable
+  const obj = {
+    headings: Object.keys(clinics[0] || {}),
+    data: []
+  }
+  console.log(`obj is ${obj} _before `)
+  for (let i = 0; i < clinics.length; i++) {
+    obj.data[i] = [];
+    for (let p in clinics[i]) {
+      if (clinics[i].hasOwnProperty(p)) {
+        obj.data[i].push(clinics[i][p])
+      }
+    }
+  }
+  console.log(`obj is ${obj} _after`)
+
+  const datatable = new DataTable("#clinic-table", {
+    searchable: true,
+    fixedHeight: true,
+    data: obj
+  })
+  console.log(`datatable mounted`)
+
+
 
 
 })
