@@ -62,7 +62,7 @@
           <div class="px-0 pb-0 card-body">
             <div class="table-responsive">
               <table id="clinic-table" class="table table-flush">
-<!--                 <thead class="thead-light">
+                <!--                 <thead class="thead-light">
                   <tr>
                     <th>clinicName</th>
                     <th>category</th>
@@ -90,47 +90,48 @@ import { onMounted, ref } from "vue";
 import { db } from '@/firebase'
 import { query, onSnapshot, collection, orderBy } from "firebase/firestore";
 
-  //firestore 
-  const colRef = collection(db, "clinics")
-  const q = query(colRef, orderBy('createdAt', 'asc'))
-  const listRef = ref([])
-  let clinics = listRef.value
-  console.log(clinics)
+//firestore setting
+const colRef = collection(db, "clinics")
+const q = query(colRef, orderBy('createdAt', 'asc'))
+const listRef = ref([])
+let clinics = listRef.value
+console.log(clinics)
 
-  const unsub = onSnapshot(q, (snap) => {
-    snap.docChanges().forEach((change) => {
-      let changedata = change.doc.data()
-      changedata.id = change.doc.id
-      if (change.type === "added") {
-        clinics.unshift(changedata)
-        console.log(`id: ${changedata.id} added.`)
-      }
-      if (change.type === "modified") {
-        let index = clinics.findIndex(listRef => listRef.id === changedata.id)
-        Object.assign(clinics[index], changedata)
-        console.log(`id: ${changedata.id} modified.`)
-      }
-      if (change.type === "removed") {
-        let index = clinics.findIndex(listRef => listRef.id === changedata.id)
-        clinics.splice(index, 1)
-        console.log(`id: ${changedata.id} modified.`)
-      }
-    })
-  },
-    (err) => { console.log(err) }
-  )
-  console.log('firestore connected')
-
+const unsub = onSnapshot(q, (snap) => {
+  snap.docChanges().forEach((change) => {
+    let changedata = change.doc.data()
+    changedata.id = change.doc.id
+    if (change.type === "added") {
+      clinics.unshift(changedata)
+      console.log(`id: ${changedata.id} added.`)
+    }
+    if (change.type === "modified") {
+      let index = clinics.findIndex(listRef => listRef.id === changedata.id)
+      Object.assign(clinics[index], changedata)
+      console.log(`id: ${changedata.id} modified.`)
+    }
+    if (change.type === "removed") {
+      let index = clinics.findIndex(listRef => listRef.id === changedata.id)
+      clinics.splice(index, 1)
+      console.log(`id: ${changedata.id} modified.`)
+    }
+  })
+},
+  (err) => { console.log(err) }
+)
+console.log('firestore connected')
 
 
 onMounted(() => {
 
-  //simple datatable and insert clinic data into datatable
-  const obj = {
+  //simple datatable 
+  let obj = {
     headings: Object.keys(clinics[0] || {}),
     data: []
   }
-  console.log(`obj is ${obj} _before `)
+
+  console.log(`obj(before) is ${obj} `)
+
   for (let i = 0; i < clinics.length; i++) {
     obj.data[i] = [];
     for (let p in clinics[i]) {
@@ -139,12 +140,12 @@ onMounted(() => {
       }
     }
   }
-  console.log(`obj is ${obj} _after`)
+  console.log(`obj(after) is ${obj.data}`)
 
   const datatable = new DataTable("#clinic-table", {
     searchable: true,
     fixedHeight: true,
-    data: obj
+    data: obj,
   })
   console.log(`datatable mounted`)
 
@@ -152,8 +153,6 @@ onMounted(() => {
 
 
 })
-
-
 
 
 
