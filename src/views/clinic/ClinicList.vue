@@ -72,7 +72,7 @@
                     <th>Status</th>
                     <th>Action</th>
                   </tr>
-                </thead>  -->
+                </thead> -->
               </table>
 
             </div>
@@ -86,35 +86,68 @@
 <script setup>
 import { DataTable } from "simple-datatables";
 // import setTooltip from "@/assets/js/tooltip.js";
-import { onMounted, ref } from "vue";
+import { onMounted, ref, reactive } from "vue";
 import { db } from '@/firebase'
 import { query, onSnapshot, collection, orderBy } from "firebase/firestore";
 
 //firestore setting
 const colRef = collection(db, "clinics")
 const q = query(colRef, orderBy('createdAt', 'asc'))
-const listRef = ref([])
-let clinics = listRef.value
+const clinics = reactive([])
 console.log(clinics)
 
 const unsub = onSnapshot(q, (snap) => {
   snap.docChanges().forEach((change) => {
     let changedata = change.doc.data()
     changedata.id = change.doc.id
+    //datatable temporary constant
+    let objt = { data: [] }
+
     if (change.type === "added") {
       clinics.unshift(changedata)
       console.log(`id: ${changedata.id} added.`)
+      console.log(`clinics length is ${clinics.length}`)
+
+      //add data to datatables
+      if (clinics) {
+        if (!objt.headings) {
+          objt.headings = Object.keys(clinics[0])
+        }
+        console.log(objt.headings)
+      }
+      let i = clinics.length - 1
+      if (clinics[i]) {
+        objt.data[i] = Object.values(clinics[i])
+      }
+
+
     }
     if (change.type === "modified") {
       let index = clinics.findIndex(listRef => listRef.id === changedata.id)
       Object.assign(clinics[index], changedata)
       console.log(`id: ${changedata.id} modified.`)
+
     }
     if (change.type === "removed") {
       let index = clinics.findIndex(listRef => listRef.id === changedata.id)
       clinics.splice(index, 1)
       console.log(`id: ${changedata.id} modified.`)
     }
+    //simple datatable 
+
+    /*     for (let i = 0; i < clinics.length; i++) {
+          objt.data[i] = [];
+          for (let p in clinics[i]) {
+            if (clinics[i].hasOwnProperty(p)) {
+              objt.data[i].push(clinics[i][p])
+            }
+          }
+        } */
+    const datatable = new DataTable("#clinic-table", {
+      searchable: true,
+      fixedHeight: true,
+      data: objt,
+    })
   })
 },
   (err) => { console.log(err) }
@@ -122,15 +155,14 @@ const unsub = onSnapshot(q, (snap) => {
 console.log('firestore connected')
 
 
-onMounted(() => {
+/* onMounted(() => {
 
   //simple datatable 
   let obj = {
     headings: Object.keys(clinics[0] || {}),
     data: []
   }
-
-  console.log(`obj(before) is ${obj} `)
+  console.log(`obj(before) headings is ${obj.headings} `)
 
   for (let i = 0; i < clinics.length; i++) {
     obj.data[i] = [];
@@ -140,7 +172,8 @@ onMounted(() => {
       }
     }
   }
-  console.log(`obj(after) is ${obj.data}`)
+  console.log(`obj(after) is ${obj.data.data}`)
+  console.log(`clinics length is ${clinics.length}`)
 
   const datatable = new DataTable("#clinic-table", {
     searchable: true,
@@ -148,12 +181,8 @@ onMounted(() => {
     data: obj,
   })
   console.log(`datatable mounted`)
-
-
-
-
-})
-
+  console.log(`clinics length is ${clinics.length}`)
+}) */
 
 
 /* onMounted(() => {
