@@ -109,9 +109,9 @@ const unsub = onSnapshot(q, (snap) => {
       console.log(`clinics length is ${clinics.length}`)
 
       //add data to datatables
-      if (clinics) {
+      if (changedata.length === 1) {
         if (!objt.headings) {
-          objt.headings = Object.keys(clinics[0])
+          objt.headings = Object.keys(changedata)
         }
         console.log(objt.headings)
       }
